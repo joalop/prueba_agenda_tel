@@ -49,24 +49,16 @@ document.getElementById('add').addEventListener('click', (e) => {
 
 
 document.getElementById('contactos').addEventListener('click', (e) => {
+    let text_o = []; let maxName = '';
 
-let text_o = [];
-let maxName = '';
+    document.querySelectorAll('.card .card_name').forEach((card_name) => {
+        text_o.push( String( card_name.textContent) );
+    });
 
+    maxName = text_o[0];
 
-document.querySelectorAll('.card .card_name').forEach((card_name) => {
-text_o.push( String( card_name.textContent) );
-});
+    for(let i=1; i < text_o.length; i++){  if( text_o[i].length > maxName.length ){  maxName = text_o[i];   }   }
 
-maxName = text_o[0];
-
-for(let i=1; i < text_o.length; i++){
-    if( text_o[i].length > maxName.length ){
-        maxName = text_o[i];
-    }
-}
-
-alert(' El Contacto: ( '+maxName+' ) es el mas largo\nTiene '+maxName.length+' letras.')
-
+    alert(' El Contacto: ( '+maxName+' ) es el mas largo\nTiene '+maxName.length+' letras.');
 });
 
