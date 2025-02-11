@@ -103,6 +103,8 @@ font-size: 20px;
 
 border: none;
 border-radius: 10px;
+
+cursor: pointer;
 }
 
 .card{
@@ -165,4 +167,20 @@ font-size: 20px;
 .card_email{
 margin: 0.5em 0 0.5em 0;
 font-size: 20px;
+}
+
+#contactos{
+    width: fit-content;
+    transition: 0.7s;
+
+}
+
+#contactos:hover{
+    padding: 0 10px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+    background: #2943eb;
+    opacity: 0.3;
 }

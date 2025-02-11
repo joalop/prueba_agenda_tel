@@ -5,11 +5,9 @@ function check(xx, yy, zz){
         alert(' No se puede Agregar el Nuevo Contacto \n Los campos estan incompletos');
         return false;
     }
-}
-
+};
 
 function agregar(){
-
     let x, xx, yy, zz;
     x = document.querySelector('.data2'); // phater
     xx = document.querySelector('#name'); // data name
@@ -42,9 +40,33 @@ function agregar(){
         element.appendChild(element3);
         x.appendChild(element);
     }
-}
+};
 
-let x = document.getElementById('add').addEventListener('click', (e) => {
+document.getElementById('add').addEventListener('click', (e) => {
     e.preventDefault();
     agregar();
 });
+
+
+document.getElementById('contactos').addEventListener('click', (e) => {
+
+let text_o = [];
+let maxName = '';
+
+
+document.querySelectorAll('.card .card_name').forEach((card_name) => {
+text_o.push( String( card_name.textContent) );
+});
+
+maxName = text_o[0];
+
+for(let i=1; i < text_o.length; i++){
+    if( text_o[i].length > maxName.length ){
+        maxName = text_o[i];
+    }
+}
+
+alert(' El Contacto: ( '+maxName+' ) es el mas largo\nTiene '+maxName.length+' letras.')
+
+});
+
